@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "d1-rest",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "my-db-winmax",
+          "database_id": "2f51f3ff-be70-4c04-a3ac-ca87ba5e68b4"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "5d29731300db456a9a9515a3414174e6",
+            "binding": "SECRET",
+            "secret_name": "winmaxpro"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
